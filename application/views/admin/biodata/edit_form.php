@@ -64,6 +64,13 @@
                     </div>
                   </div>
                   <div class="form-group">
+                    <label for="moto">Moto</label>
+                    <input type="text" value="<?php echo $biodata->moto ?>" class="form-control <?php echo form_error('moto') ? 'is-invalid':'' ?>" id="moto" placeholder="Moto" name="moto">
+                    <div class="invalid-feedback">
+                        <?php echo form_error('moto') ?>
+                    </div>
+                  </div>
+                  <div class="form-group">
                     <label for="email">Email</label>
                     <input type="text" value="<?php echo $biodata->email ?>" class="form-control <?php echo form_error('email') ? 'is-invalid':'' ?>" id="email" placeholder="email" name="email">
                     <div class="invalid-feedback">

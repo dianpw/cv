@@ -2,22 +2,6 @@
 
 class Biodata_model extends CI_Model
 {
-    private $_table = "biodata";
-
-    public $biodata_id;
-    public $name;
-    public $place;
-    public $date;
-    public $address;
-    public $email;
-    public $location;
-    public $phone;
-    public $religion;
-    public $resume;
-    public $sex;
-    public $foto = "default.jpg";
-    public $perubahan;
-
     public function rules()
     {
         return [
@@ -65,12 +49,12 @@ class Biodata_model extends CI_Model
 
     public function getAll()
     {
-        return $this->db->get($this->_table)->result();
+        return $this->db->get('biodata')->result();
     }
     
     public function getById($id)
     {
-        return $this->db->get_where($this->_table, ["biodata_id" => $id])->row();
+        return $this->db->get_where('biodata', ["biodata_id" => $id])->row();
     }
 
     public function save()
@@ -81,6 +65,7 @@ class Biodata_model extends CI_Model
         $this->place    = $post["place"];
         $this->date     = $post["date"];
         $this->address  = $post["address"];
+        $this->moto     = $post["moto"];
         $this->email    = $post["email"];
         $this->location = $post["location"];
         $this->phone    = $post["phone"];
@@ -88,7 +73,7 @@ class Biodata_model extends CI_Model
         $this->resume   = $post["resume"];
         $this->sex      = $post["sex"];
         $this->foto     = $this->_uploadImage();
-        $this->db->insert($this->_table, $this);
+        $this->db->insert('biodata', $this);
     }
 
     public function update()
@@ -99,6 +84,7 @@ class Biodata_model extends CI_Model
         $this->place    = $post["place"];
         $this->date     = $post["date"];
         $this->address  = $post["address"];
+        $this->moto     = $post["moto"];
         $this->email    = $post["email"];
         $this->location = $post["location"];
         $this->phone    = $post["phone"];
@@ -112,31 +98,31 @@ class Biodata_model extends CI_Model
             $this->foto = $post["old_image"];
         }
 
-        $this->db->update($this->_table, $this, array('biodata_id' => $post['id']));
+        $this->db->update('biodata', $this, array('biodata_id' => $post['id']));
         
     }
 
     public function delete($id)
     {
-        return $this->db->delete($this->_table, array("biodata_id" => $id));
+        return $this->db->delete('biodata', array("biodata_id" => $id));
     }
 
     private function _uploadImage()
     {
-    $config['upload_path']          = './assets/img/about/';
-    $config['allowed_types']        = 'gif|jpg|png';
-    $config['file_name']            = $this->biodata_id;
-    $config['overwrite']			= true;
-    $config['max_size']             = 1024; // 1MB
-    // $config['max_width']            = 1024;
-    // $config['max_height']           = 768;
+        $config['upload_path']          = './assets/img/about/';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['file_name']            = $this->biodata_id;
+        $config['overwrite']			= true;
+        $config['max_size']             = 1024; // 1MB
+        // $config['max_width']            = 1024;
+        // $config['max_height']           = 768;
 
-    $this->load->library('upload', $config);
+        $this->load->library('upload', $config);
 
-    if ($this->upload->do_upload('foto')) {
-        return $this->upload->data("file_name");
-    }
-    
-    return "default.jpg";
+        if ($this->upload->do_upload('foto')) {
+            return $this->upload->data("file_name");
+        }
+        
+        return "default.jpg";
     }
 }

@@ -46,8 +46,8 @@
             <div class="col-md-12 col-sm-12 text-center">
               <div class="contents">
                 <h5 class="script-font wow fadeInUp" data-wow-delay="0.2s">Hi This is</h5>
-                <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s"><?= $home['name'] ?></h2>
-                <p class="script-font wow fadeInUp" data-wow-delay="0.6s">Vocational Teacher and IT Project Manager</p>
+                <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s"><?= $home['name']; ?></h2>
+                <p class="script-font wow fadeInUp" data-wow-delay="0.6s"><?= $home['moto']; ?></p>
                 <ul class="social-icon wow fadeInUp" data-wow-delay="0.8s">
                   <li>
                     <a class="facebook" href="https://www.facebook.com/53N5451" target="_blank"><i class="icon-social-facebook"></i></a>
