@@ -22,9 +22,8 @@
                 <div class="card-header">
                     <h3 class="card-title">
                         <a class="btn btn-primary" href="<?php echo site_url('admin/education/add') ?>">
-                        <i class="fa fa-plus"></i> Add New
-                        </a>
-                         Data Pendidikan
+                        <i class="fa fa-plus"></i> Data Pendidikan
+                        </a>                         
                     </h3>
                 </div>
                 <!-- /.card-header -->

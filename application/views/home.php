@@ -180,41 +180,15 @@
                   <i class="icon-graduation"></i>
                   <h2 class="timelin-title">Education</h2>
                 </li>
+                <?php foreach ($education as $edu): ?>
                 <li>
                   <div class="content-text">
-                    <h3 class="line-title">Training Asesor Kompetensi Profesi   - LSP TIK Indonesia</h3>
-                    <span>2018</span>
-                    <p class="line-text">LSP TIK Indonesia is an institution that has a license from BNSP (BNSP-LSP-018-ID) to carry out the process of proving that a professional is truly competent in the field of competence.</p>
+                    <h3 class="line-title"><?= $edu->nama ?></h3>
+                    <span><?= $edu->tahun ?></span>
+                    <p class="line-text"><?= $edu->keterangan ?></p>
                   </div>
                 </li>
-                <li>
-                  <div class="content-text">
-                    <h3 class="line-title">S1 Pend. Teknik Informatika - Universitas Negeri Malang</h3>
-                    <span>2010 - 2014</span>
-                    <p class="line-text">Organizing informatics engineering education with the aim of producing graduates in the field of informatics engineering teaching with qualifications of undergraduate education (S1) who are superior, professional, skilled, and sensitive to the preservation of the socio-cultural environment.</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="content-text">
-                    <h3 class="line-title">Teknik Mekanik Otomotif - SMKN 1 Bandung</h3>
-                    <span>2007 - 2010</span>
-                    <p class="line-text">Vocational High School in major Light Vehicle Engineering.</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="content-text">
-                    <h3 class="line-title">SMPN 1 Bandung</h3>
-                    <span>2004 - 2007</span>
-                    <p class="line-text">Junior High School.</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="content-text">
-                    <h3 class="line-title">SDN 2 Gombang</h3>
-                    <span>1998 - 2004</span>
-                    <p class="line-text">Elementary School.</p>
-                  </div>
-                </li>
+                <?php endforeach; ?>
               </ul>
             </div>
           </div>
@@ -225,48 +199,15 @@
                   <i class="icon-briefcase"></i>
                   <h2 class="timelin-title">Experience</h2>
                 </li>
+                <?php foreach ($experiencce as $exp): ?>
                 <li>
                   <div class="content-text">
-                    <h3 class="line-title">Asesor Kompetensi Profesi - LSP TIK Indonesia</h3>
-                    <span>2018 - Present</span>
-                    <p class="line-text">MET.000.007178 2018</p>
+                    <h3 class="line-title"><?= $exp->nama ?></h3>
+                    <span><?= $exp->tahun ?></span>
+                    <p class="line-text"><?= $exp->keterangan ?></p>
                   </div>
                 </li>
-                <li>
-                  <div class="content-text">
-                    <h3 class="line-title">CEO - UMAKODING</h3>
-                    <span>2018 - Present</span>
-                    <p class="line-text">CEO and Founder course programming UMAKODING.</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="content-text">
-                    <h3 class="line-title">CEO - MALIKI.ID</h3>
-                    <span>2017 - Present</span>
-                    <p class="line-text">CEO and Founder software house MALIKI.ID.</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="content-text">
-                    <h3 class="line-title">CEO - RUMAHBUNGLON</h3>
-                    <span>2015 - 2017</span>
-                    <p class="line-text">CEO and Founder software house Rumahbunglon.com.</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="content-text">
-                    <h3 class="line-title">Teacher - SMKN 5 Malang</h3>
-                    <span>2014 - Present</span>
-                    <p class="line-text">Teaches vocational high schools in TKJ, RPL, and Multimedia majors.</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="content-text">
-                    <h3 class="line-title">Assistant Lecturer - Universitas Negeri Malang</h3>
-                    <span>2012 - 2013</span>
-                    <p class="line-text">Teaching assistant for Database.</p>
-                  </div>
-                </li>
+                <?php endforeach; ?>
               </ul>
             </div>
           </div>

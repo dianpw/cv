@@ -2,14 +2,6 @@
 
 class Education_model extends CI_Model
 {
-    private $_table = "education";
-
-    public $education_id;
-    public $nama;
-    public $tahun;
-    public $keterangan;
-    public $perubahan;
-
     public function rules()
     {
         return [
@@ -30,13 +22,13 @@ class Education_model extends CI_Model
     public function getAll()
     {
         $hasil = $this->db->order_by('tahun', 'DESC');
-        $hasil = $this->db->get($this->_table);       
+        $hasil = $this->db->get('education');       
         return $hasil->result();
     }
     
     public function getById($id)
     {
-        return $this->db->get_where($this->_table, ["education_id" => $id])->row();
+        return $this->db->get_where('education', ["education_id" => $id])->row();
     }
 
     public function save()
@@ -46,7 +38,7 @@ class Education_model extends CI_Model
         $this->nama         = $post["nama"];
         $this->tahun        = $post["tahun"];
         $this->keterangan   = $post["keterangan"];
-        $this->db->insert($this->_table, $this);
+        $this->db->insert('education', $this);
     }
 
     public function update($id = null)
@@ -56,12 +48,12 @@ class Education_model extends CI_Model
         $this->nama         = $post["nama"];
         $this->tahun        = $post["tahun"];
         $this->keterangan   = $post["keterangan"];
-        $this->db->update($this->_table, $this, array('education_id' => $post['id']));        
+        $this->db->update('education', $this, array('education_id' => $post['id']));        
     }
 
     public function delete($id)
     {
-        return $this->db->delete($this->_table, array("education_id" => $id));
+        return $this->db->delete('education', array("education_id" => $id));
     }
 
 }
