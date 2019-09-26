@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon-->
-    <link rel="icon" type="image/png" sizes="192x192"  href="assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="<?= base_url('assets/img/favicon.png'); ?>">
     <!-- Author Meta -->
     <meta name="author" content="Dian Purwanto">
     <!-- Meta Description -->
@@ -13,24 +13,24 @@
     <!-- Meta Keyword -->
     <meta name="keywords" content="Curriculum Vitae, CV, Resume">
 
-    <title><?php echo SITE_NAME .": "; ?></title>
+    <title><?php echo SITE_NAME; ?></title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/bootstrap.min.css'); ?>" >
     <!-- Fonts -->
-    <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/fonts/font-awesome.min.css'); ?>">
     <!-- Icon -->
-    <link rel="stylesheet" type="text/css" href="assets/fonts/simple-line-icons.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/fonts/simple-line-icons.css'); ?>">
     <!-- Slicknav -->
-    <link rel="stylesheet" type="text/css" href="assets/css/slicknav.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/slicknav.css'); ?>">
     <!-- Nivo Lightbox -->
-    <link rel="stylesheet" type="text/css" href="assets/css/nivo-lightbox.css" >
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/nivo-lightbox.css'); ?>" >
     <!-- Animate -->
-    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/animate.css'); ?>">
     <!-- Main Style -->
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/main.css'); ?>">
     <!-- Responsive Style -->
-    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/responsive.css'); ?>">
 
   </head>
   <body>
@@ -46,7 +46,7 @@
             <div class="col-md-12 col-sm-12 text-center">
               <div class="contents">
                 <h5 class="script-font wow fadeInUp" data-wow-delay="0.2s">Hi This is</h5>
-                <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s">Dian Purwanto</h2>
+                <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s"><?= $home['name'] ?></h2>
                 <p class="script-font wow fadeInUp" data-wow-delay="0.6s">Vocational Teacher and IT Project Manager</p>
                 <ul class="social-icon wow fadeInUp" data-wow-delay="0.8s">
                   <li>
@@ -85,32 +85,25 @@
         <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="img-thumb wow fadeInLeft" data-wow-delay="0.3s">
-              <img class="img-fluid" src="assets/img/about/about.jpg" alt="">
+              <img class="img-fluid" src="<?= base_url('assets/img/about/').$home['foto']; ?>" alt="">
             </div>
           </div> 
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="profile-wrapper wow fadeInRight" data-wow-delay="0.3s">
               <h3>Hi Guys!</h3>
-              <p>I'm competent and personable IT project manager with 4+ years experience maintaining and expanding cross-functional delivery teams and liaising with both executives and the technology team. introduced new AI and ML initiative which increased client demand by 250% and reduced project completion times by over 50%.</p>
+              <p><?= $home['resume']; ?></p>
               <div class="about-profile">
                 <ul class="admin-profile">
-                  <li><span class="pro-title"> Name </span> <span class="pro-detail">Dian Purwanto</span></li>
-                  <li><span class="pro-title"> Sex </span> <span class="pro-detail">Male</span></li>
-                  <li><span class="pro-title"> Place, Date of Birth </span> <span class="pro-detail">Tulungagung, 21 Oktober 1991</span></li>
-                  <li><span class="pro-title"> Religion </span> <span class="pro-detail">Moslem</span></li>
-                  <li><span class="pro-title"> Address </span> <span class="pro-detail">Jl. Bogor Terusan No. 18</span></li>
-                  <li><span class="pro-title"> Location </span> <span class="pro-detail">Malang, Jawa Timur, Indonesia</span></li>
-                  <li><span class="pro-title"> e-mail </span> <span class="pro-detail">dianpw@ymail.com</span></li>
-                  <li><span class="pro-title"> Phone </span> <span class="pro-detail">+62 857 3674 5916</span></li>
+                  <li><span class="pro-title"> Name </span> <span class="pro-detail"><?= $home['name']; ?></span></li>
+                  <li><span class="pro-title"> Sex </span> <span class="pro-detail"><?= $home['sex']; ?></span></li>
+                  <li><span class="pro-title"> Place, Date of Birth </span> <span class="pro-detail"><?= $home['place'] . ', ' . $home['date']; ?></span></li>
+                  <li><span class="pro-title"> Religion </span> <span class="pro-detail"><?= $home['religion']; ?></span></li>
+                  <li><span class="pro-title"> Address </span> <span class="pro-detail"><?= $home['address']; ?></span></li>
+                  <li><span class="pro-title"> Location </span> <span class="pro-detail"><?= $home['location']; ?></span></li>
+                  <li><span class="pro-title"> e-mail </span> <span class="pro-detail"><?= $home['email']; ?></span></li>
+                  <li><span class="pro-title"> Phone </span> <span class="pro-detail"><?= $home['phone']; ?></span></li>
                 </ul>
               </div>
-              <?php 
-                //echo var_dump($home); 
-                //foreach $home as $home;
-                
-              ?>
-              <!--a href="#" class="btn btn-common"><i class="icon-paper-clip"></i> Download Resume</a>
-              <a href="#" class="btn btn-danger"><i class="icon-speech"></i> Contact Me</a-->
             </div>
           </div>   
         </div>
@@ -312,10 +305,10 @@
             <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print">
               <div class="portfolio-item">
                 <div class="shot-item">
-                  <img src="assets/img/gallery/img-1.jpg" alt="" />  
+                  <img src="<?= base_url('assets/img/gallery/img-1.jpg'); ?>" alt="" />  
                   <div class="overlay">
                     <div class="icons">
-                      <a class="lightbox preview" href="assets/img/gallery/img-1.jpg">
+                      <a class="lightbox preview" href="<?= base_url('assets/img/gallery/img-1.jpg'); ?>">
                         <i class="icon-eye"></i>
                       </a>
                       <a class="link" href="#">
@@ -329,10 +322,10 @@
             <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix design print">
               <div class="portfolio-item">
                 <div class="shot-item">
-                  <img src="assets/img/gallery/img-2.jpg" alt=""/> 
+                  <img src="<?= base_url('assets/img/gallery/img-2.jpg'); ?>" alt=""/> 
                   <div class="overlay">
                     <div class="icons">
-                      <a class="lightbox preview" href="assets/img/gallery/img-2.jpg">
+                      <a class="lightbox preview" href="<?= base_url('assets/img/gallery/img-2.jpg'); ?>">
                         <i class="icon-eye"></i>
                       </a>
                       <a class="link" href="#">
@@ -346,10 +339,10 @@
             <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development">
               <div class="portfolio-item">
                 <div class="shot-item">
-                  <img src="assets/img/gallery/img-3.jpg" alt=""/> 
+                  <img src="<?= base_url('assets/img/gallery/img-3.jpg'); ?>" alt=""/> 
                   <div class="overlay">
                     <div class="icons">
-                      <a class="lightbox preview" href="assets/img/gallery/img-3.jpg">
+                      <a class="lightbox preview" href="<?= base_url('assets/img/gallery/img-3.jpg'); ?>">
                         <i class="icon-eye"></i>
                       </a>
                       <a class="link" href="#">
@@ -363,10 +356,10 @@
             <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development design">
               <div class="portfolio-item">
                 <div class="shot-item">
-                  <img src="assets/img/gallery/img-4.jpg" alt="" /> 
+                  <img src="<?= base_url('assets/img/gallery/img-4.jpg'); ?>" alt="" /> 
                   <div class="overlay">
                     <div class="icons">
-                      <a class="lightbox preview" href="assets/img/gallery/img-4.jpg">
+                      <a class="lightbox preview" href="<?= base_url('assets/img/gallery/img-4.jpg'); ?>">
                         <i class="icon-eye"></i>
                       </a>
                       <a class="link" href="#">
@@ -380,10 +373,10 @@
             <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development">
               <div class="portfolio-item">
                 <div class="shot-item">
-                  <img src="assets/img/gallery/img-5.jpg" alt="" /> 
+                  <img src="<?= base_url('assets/img/gallery/img-5.jpg'); ?>" alt="" /> 
                   <div class="overlay">
                     <div class="icons">
-                      <a class="lightbox preview" href="assets/img/gallery/img-5.jpg">
+                      <a class="lightbox preview" href="<?= base_url('assets/img/gallery/img-5.jpg'); ?>">
                         <i class="icon-eye"></i>
                       </a>
                       <a class="link" href="#">
@@ -397,10 +390,10 @@
             <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix print design">
               <div class="portfolio-item">
                 <div class="shot-item">
-                  <img src="assets/img/gallery/img-6.jpg" alt=""/>
+                  <img src="<?= base_url('assets/img/gallery/img-6.jpg'); ?>" alt=""/>
                   <div class="overlay">
                     <div class="icons">
-                      <a class="lightbox preview" href="assets/img/gallery/img-6.jpg">
+                      <a class="lightbox preview" href="<?= base_url('assets/img/gallery/img-6.jpg'); ?>">
                         <i class="icon-eye"></i>
                       </a>
                       <a class="link" href="#">
@@ -493,18 +486,18 @@
     </a>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="assets/js/jquery-min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.mixitup.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/wow.js"></script>
-    <script src="assets/js/jquery.nav.js"></script>
-    <script src="assets/js/jquery.easing.min.js"></script>  
-    <script src="assets/js/nivo-lightbox.js"></script>
-    <script src="assets/js/jquery.slicknav.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="<?= base_url('assets/js/jquery-min.js'); ?>"></script>
+    <script src="<?= base_url('assets/js/popper.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/js/bootstrap.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/js/jquery.mixitup.js'); ?>"></script>
+    <script src="<?= base_url('assets/js/jquery.counterup.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/js/waypoints.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/js/wow.js'); ?>"></script>
+    <script src="<?= base_url('assets/js/jquery.nav.js'); ?>"></script>
+    <script src="<?= base_url('assets/js/jquery.easing.min.js'); ?>"></script>  
+    <script src="<?= base_url('assets/js/nivo-lightbox.js'); ?>"></script>
+    <script src="<?= base_url('assets/js/jquery.slicknav.js'); ?>"></script>
+    <script src="<?= base_url('assets/js/main.js'); ?>"></script>
       
   </body>
 </html>

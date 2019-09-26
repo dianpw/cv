@@ -2,25 +2,9 @@
 
 class Home_model extends CI_Model
 {
-    private $_table = "biodata";
-
-    public $biodata_id;
-    public $name;
-    public $place;
-    public $date;
-    public $address;
-    public $email;
-    public $location;
-    public $phone;
-    public $religion;
-    public $resume;
-    public $sex;
-    public $foto = "default.jpg";
-    public $perubahan;
-
     public function getAll()
     {
-        return $this->db->get('biodata')->result();
+        return $this->db->get('biodata')->row_array();
     }
     
     public function getById($id)
