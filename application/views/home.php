@@ -357,37 +357,15 @@
       <div class="container">
         <div class="row">
           <!-- Counter Item -->
+          <?php foreach ($info as $info): ?>
           <div class="col-md-3 col-sm-6 work-counter-widget text-center">
             <div class="counter wow fadeInDown" data-wow-delay="0.3s">
-              <div class="icon"><i class="icon-briefcase"></i></div>
-              <div class="counterUp">2</div>
-              <p>Project Working</p>
+              <div class="icon"><i class="<?= $info->icon ?>"></i></div>
+              <div class="counterUp"><?= $info->value ?></div>
+              <p><?= $info->judul ?></p>
             </div>
           </div>
-          <!-- Counter Item -->
-          <div class="col-md-3 col-sm-6 work-counter-widget text-center">
-            <div class="counter wow fadeInDown" data-wow-delay="0.6s">
-              <div class="icon"><i class="icon-check"></i></div>
-              <div class="counterUp">15</div>
-              <p>Project Done</p>
-            </div>
-          </div>
-          <!-- Counter Item -->
-          <div class="col-md-3 col-sm-6 work-counter-widget text-center">
-            <div class="counter wow fadeInDown" data-wow-delay="0.9s">
-              <div class="icon"><i class="icon-diamond"></i></div>
-              <div class="counterUp">10</div>
-              <p>Awards Received</p>
-            </div>
-          </div>
-          <!-- Counter Item -->
-          <div class="col-md-3 col-sm-6 work-counter-widget text-center">
-            <div class="counter wow fadeInDown" data-wow-delay="1.2s">
-              <div class="icon"><i class="icon-heart"></i></div>
-              <div class="counterUp">15</div>
-              <p>Happy Clients</p>
-            </div>
-          </div>
+          <?php endforeach; ?>
         </div>
       </div>
     </section>

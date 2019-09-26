@@ -20,12 +20,7 @@
             <div class="container-fluid">
                 <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">
-                        <a class="btn btn-primary" href="<?php echo site_url('admin/info/add') ?>">
-                        <i class="fa fa-plus"></i> Add New
-                        </a>
-                         Data Info
-                    </h3>
+                    <h3 class="card-title">Data Info</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -47,9 +42,6 @@
                     <td>
                         <a class="btn btn-warning" href="<?php echo site_url('admin/info/edit/'.$inf->info_id) ?>">
                             <i class="fa fa-edit"></i> 
-                        </a>
-                        <a class="btn btn-danger" onclick="deleteConfirm('<?php echo site_url('admin/info/delete/'.$inf->info_id) ?>')" href="#!" class="btn btn-small text-danger">
-                            <i class="fa fa-trash"></i> 
                         </a>
                     </td>
                     </tr>

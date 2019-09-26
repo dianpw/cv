@@ -2,14 +2,6 @@
 
 class Info_model extends CI_Model
 {
-    private $_table = "info";
-
-    public $info_id;
-    public $judul;
-    public $icon;
-    public $value;
-    public $perubahan;
-
     public function rules()
     {
         return [
@@ -29,13 +21,13 @@ class Info_model extends CI_Model
 
     public function getAll()
     {
-        $hasil = $this->db->get($this->_table);       
+        $hasil = $this->db->get('info');       
         return $hasil->result();
     }
     
     public function getById($id)
     {
-        return $this->db->get_where($this->_table, ["info_id" => $id])->row();
+        return $this->db->get_where('info', ["info_id" => $id])->row();
     }
 
     public function save()
@@ -45,7 +37,7 @@ class Info_model extends CI_Model
         $this->judul   = $post["judul"];
         $this->icon    = $post["icon"];
         $this->value   = $post["value"];
-        $this->db->insert($this->_table, $this);
+        $this->db->insert('info', $this);
     }
 
     public function update($id = null)
@@ -55,12 +47,12 @@ class Info_model extends CI_Model
         $this->judul   = $post["judul"];
         $this->icon    = $post["icon"];
         $this->value   = $post["value"];
-        $this->db->update($this->_table, $this, array('info_id' => $post['id']));        
+        $this->db->update('info', $this, array('info_id' => $post['id']));        
     }
 
     public function delete($id)
     {
-        return $this->db->delete($this->_table, array("info_id" => $id));
+        return $this->db->delete('info', array("info_id" => $id));
     }
 
 }
