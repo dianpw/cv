@@ -20,12 +20,12 @@ class Home_model extends CI_Model
 
     public function getAll()
     {
-        return $this->db->get($this->_table)->result();
+        return $this->db->get('biodata')->result();
     }
     
     public function getById($id)
     {
-        return $this->db->get_where($this->_table, ["biodata_id" => $id])->row();
+        return $this->db->get_where('biodata', ["biodata_id" => $id])->row();
     }
 
 }
