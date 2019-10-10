@@ -117,53 +117,20 @@
       <div class="container">
         <div class="row">
           <!-- Services item -->
+          <?php foreach ($skill as $s): ?>
           <div class="col-md-6 col-lg-3 col-xs-12">
             <div class="services-item wow fadeInDown" data-wow-delay="0.3s">
               <div class="icon">
-                <i class="icon-grid"></i>
+                <i class="<?= $s->icon ?>"></i>
               </div>
               <div class="services-content">
-                <h3><a href="#">Full Stack Developer</a></h3>
-                <p>Build front-end and back-end website and application</p>
+                <h3><a href="#"><?= $s->nama ?></a></h3>
+                <?= $s->keterangan ?>
               </div>
             </div>
           </div>
-          <!-- Services item -->
-          <div class="col-md-6 col-lg-3 col-xs-12">
-            <div class="services-item wow fadeInDown" data-wow-delay="0.6s">
-              <div class="icon">
-                <i class="icon-layers"></i>
-              </div>
-              <div class="services-content">
-                <h3><a href="#">Graphic Design</a></h3>
-                <p>Web desain, Movie & multimedia, Product identity, and Packaging  </p>
-              </div>
-            </div>
-          </div>
-          <!-- Services item -->
-          <div class="col-md-6 col-lg-3 col-xs-12">
-            <div class="services-item wow fadeInDown" data-wow-delay="0.9s">
-              <div class="icon">
-                <i class="icon-briefcase"></i>
-              </div>
-              <div class="services-content">
-                <h3><a href="#">Business Branding</a></h3>
-                <p>Build a business plan to meet the desired target company</p>
-              </div>
-            </div>
-          </div>
-          <!-- Services item -->
-          <div class="col-md-6 col-lg-3 col-xs-12">
-            <div class="services-item wow fadeInDown" data-wow-delay="1.2s">
-              <div class="icon">
-                <i class="icon-bubbles"></i>
-              </div>
-              <div class="services-content">
-                <h3><a href="#">Consultancy</a></h3>
-                <p>Providing advisory services in the area of ​​IT expertise</p>
-              </div>
-            </div>
-          </div>
+          <?php endforeach; ?>
+          
         </div>
       </div>
     </section>
