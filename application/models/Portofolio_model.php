@@ -32,7 +32,13 @@ class Portofolio_model extends CI_Model
     {
         return $this->db->get('portofolio')->result();
     }
-    
+    public function getKatagori()
+    {
+        $this->db->select('portofolio.katagori');
+		$this->db->distinct();
+		$hasil = $this->db->get('portofolio'); 
+		return $hasil->result();
+    }
     public function getById($id)
     {
         return $this->db->get_where('portofolio', ["portofolio_id" => $id])->row();

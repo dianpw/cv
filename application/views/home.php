@@ -188,31 +188,28 @@
               <a class="filter active btn btn-common" data-filter="all">
                 All 
               </a>
-              <a class="filter btn btn-common" data-filter=".design">
-                Design 
+              <?php foreach ($katagori as $kt): ?>
+              <a class="filter btn btn-common" data-filter=".<?= $kt->katagori ?>">
+                <?= $kt->katagori ?> 
               </a>
-              <a class="filter btn btn-common" data-filter=".development">
-                Development
-              </a>
-              <a class="filter btn btn-common" data-filter=".print">
-                Print 
-              </a>
+              <?php endforeach; ?>
             </div>
             <!-- Portfolio Controller/Buttons Ends-->
           </div>
 
           <!-- Portfolio Recent Projects -->
           <div id="portfolio" class="row wow fadeInDown" data-wow-delay="0.4s">
-            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print">
+            <?php foreach ($portofolio as $pr): ?>
+            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix <?= $pr->katagori ?>">
               <div class="portfolio-item">
                 <div class="shot-item">
-                  <img src="<?= base_url('assets/img/gallery/img-1.jpg'); ?>" alt="" />  
+                  <img src="<?= base_url('assets/img/portofolio/') . $pr->foto; ?>" alt="" />  
                   <div class="overlay">
                     <div class="icons">
-                      <a class="lightbox preview" href="<?= base_url('assets/img/gallery/img-1.jpg'); ?>">
+                      <a class="lightbox preview" href="<?= base_url('assets/img/portofolio/') . $pr->foto; ?>">
                         <i class="icon-eye"></i>
                       </a>
-                      <a class="link" href="#">
+                      <a class="link" href="<?= $pr->link ?>">
                         <i class="icon-link"></i>
                       </a>
                     </div>
@@ -220,91 +217,7 @@
                 </div>               
               </div>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix design print">
-              <div class="portfolio-item">
-                <div class="shot-item">
-                  <img src="<?= base_url('assets/img/gallery/img-2.jpg'); ?>" alt=""/> 
-                  <div class="overlay">
-                    <div class="icons">
-                      <a class="lightbox preview" href="<?= base_url('assets/img/gallery/img-2.jpg'); ?>">
-                        <i class="icon-eye"></i>
-                      </a>
-                      <a class="link" href="#">
-                        <i class="icon-link"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>               
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development">
-              <div class="portfolio-item">
-                <div class="shot-item">
-                  <img src="<?= base_url('assets/img/gallery/img-3.jpg'); ?>" alt=""/> 
-                  <div class="overlay">
-                    <div class="icons">
-                      <a class="lightbox preview" href="<?= base_url('assets/img/gallery/img-3.jpg'); ?>">
-                        <i class="icon-eye"></i>
-                      </a>
-                      <a class="link" href="#">
-                        <i class="icon-link"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>               
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development design">
-              <div class="portfolio-item">
-                <div class="shot-item">
-                  <img src="<?= base_url('assets/img/gallery/img-4.jpg'); ?>" alt="" /> 
-                  <div class="overlay">
-                    <div class="icons">
-                      <a class="lightbox preview" href="<?= base_url('assets/img/gallery/img-4.jpg'); ?>">
-                        <i class="icon-eye"></i>
-                      </a>
-                      <a class="link" href="#">
-                        <i class="icon-link"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>               
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development">
-              <div class="portfolio-item">
-                <div class="shot-item">
-                  <img src="<?= base_url('assets/img/gallery/img-5.jpg'); ?>" alt="" /> 
-                  <div class="overlay">
-                    <div class="icons">
-                      <a class="lightbox preview" href="<?= base_url('assets/img/gallery/img-5.jpg'); ?>">
-                        <i class="icon-eye"></i>
-                      </a>
-                      <a class="link" href="#">
-                        <i class="icon-link"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>               
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix print design">
-              <div class="portfolio-item">
-                <div class="shot-item">
-                  <img src="<?= base_url('assets/img/gallery/img-6.jpg'); ?>" alt=""/>
-                  <div class="overlay">
-                    <div class="icons">
-                      <a class="lightbox preview" href="<?= base_url('assets/img/gallery/img-6.jpg'); ?>">
-                        <i class="icon-eye"></i>
-                      </a>
-                      <a class="link" href="#">
-                        <i class="icon-link"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>               
-              </div>
-            </div>
+            <?php endforeach; ?>            
           </div>
         </div>
       </div>

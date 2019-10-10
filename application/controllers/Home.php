@@ -8,6 +8,7 @@ class Home extends CI_Controller {
         parent::__construct();
         $this->load->model("home_model");
         $this->load->model("education_model");
+        $this->load->model("portofolio_model");
         $this->load->model("experiencce_model");
         $this->load->model("info_model");
         $this->load->model("skill_model");
@@ -18,6 +19,8 @@ class Home extends CI_Controller {
         $data["home"] = $this->home_model->getAll();
         $data["education"] = $this->education_model->getAll();
         $data["experiencce"] = $this->experiencce_model->getAll();
+        $data["portofolio"] = $this->portofolio_model->getAll();
+        $data["katagori"] = $this->portofolio_model->getKatagori();
         $data["info"] = $this->info_model->getAll();
         $data["skill"] = $this->skill_model->getAll();
         $data["sosmed"] = $this->sosmed_model->getAll();
