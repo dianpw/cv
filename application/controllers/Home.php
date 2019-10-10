@@ -11,6 +11,7 @@ class Home extends CI_Controller {
         $this->load->model("experiencce_model");
         $this->load->model("info_model");
         $this->load->model("skill_model");
+        $this->load->model("sosmed_model");
     }
 	public function index()
 	{
@@ -19,6 +20,7 @@ class Home extends CI_Controller {
         $data["experiencce"] = $this->experiencce_model->getAll();
         $data["info"] = $this->info_model->getAll();
         $data["skill"] = $this->skill_model->getAll();
+        $data["sosmed"] = $this->sosmed_model->getAll();
         //var_dump($data['info']);
         $this->load->view("home", $data);
     }

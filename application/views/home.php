@@ -49,18 +49,11 @@
                 <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s"><?= $home['name']; ?></h2>
                 <p class="script-font wow fadeInUp" data-wow-delay="0.6s"><?= $home['moto']; ?></p>
                 <ul class="social-icon wow fadeInUp" data-wow-delay="0.8s">
+                  <?php foreach ($sosmed as $sd): ?>
                   <li>
-                    <a class="facebook" href="https://www.facebook.com/53N5451" target="_blank"><i class="icon-social-facebook"></i></a>
+                    <a class="<?= $sd->icon ?>" href="<?= $sd->link ?>" target="_blank"><i class="icon-social-<?= $sd->icon ?>"></i></a>
                   </li>
-                  <li>
-                    <a class="twitter" href="https://twitter.com/cik__gu" target="_blank"><i class="icon-social-twitter"></i></a>
-                  </li>
-                  <li>
-                    <a class="instagram" href="https://www.instagram.com/dianpw/" target="_blank"><i class="icon-social-instagram"></i></a>
-                  </li>
-                  <li>
-                    <a class="linkedin" href="https://www.linkedin.com/in/dian-purwanto-1ab59362/" target="_blank"><i class="icon-social-linkedin"></i></a>
-                  </li>
+                  <?php endforeach; ?>
                 </ul>
                 <?php
                 $str = "https://wa.me/6285736745916?text=Hallo *Dian*, Saya tertarik dengan CV kamu.";
@@ -344,19 +337,12 @@
         <div class="row">
           <div class="col-md-12">
             <div class="footer-text text-center wow fadeInDown" data-wow-delay="0.3s">
-              <ul class="social-icon">
-              <li>
-                    <a class="facebook" href="https://www.facebook.com/53N5451" target="_blank"><i class="icon-social-facebook"></i></a>
-                  </li>
+              <ul class="social-icon">              
+                  <?php foreach ($sosmed as $sd): ?>
                   <li>
-                    <a class="twitter" href="https://twitter.com/cik__gu" target="_blank"><i class="icon-social-twitter"></i></a>
+                    <a class="<?= $sd->icon ?>" href="<?= $sd->link ?>" target="_blank"><i class="icon-social-<?= $sd->icon ?>"></i></a>
                   </li>
-                  <li>
-                    <a class="instagram" href="https://www.instagram.com/dianpw/" target="_blank"><i class="icon-social-instagram"></i></a>
-                  </li>
-                  <li>
-                    <a class="linkedin" href="https://www.linkedin.com/in/dian-purwanto-1ab59362/" target="_blank"><i class="icon-social-linkedin"></i></a>
-                  </li>
+                  <?php endforeach; ?>
               </ul>
               <p>© 2019 <a href="https://maliki.id/" target="_blank"> MALIKI.ID</a> All Right Reserved</p>
             </div>
